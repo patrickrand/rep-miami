@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Antic+Slab);
+
+html,body {
+    height:100%;
+}
+
+h1 {
+    /*   font-family: 'Open Sans',sans-serif;
+       color: #555555;
+       font-:100px;
+         background-color: #e7e7e7;*/
+}
+
+h2 {
+    font-family: 'Antic Slab', serif;
+    font-size:100px;
+    color:#DDCCEE;
+}
+
+.lead {
+    font-family: 'Open Sans',sans-serif;
+    color: #555555;
+    font-size:22px;
+
+}
+
+.btn-primary1 {
+    color: rgb(68, 68, 68);
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color:rgb(245, 245, 245);
+}
+
+.page-header1 {
+    font-family: 'Open Sans',sans-serif;
+    color: rgb(68, 68, 68);
+    font-size:80px;
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+
+}
+/* Custom container */
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+    min-height:100%;
+    background-color:#fff;
+    color:#eee;
+    overflow:hidden;
+}
+
+.container-full a {
+    color:#efefef;
+    text-decoration:none;
+}
+
+.v-center {
+    margin-top:7%;
+}
