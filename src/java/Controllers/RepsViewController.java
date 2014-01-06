@@ -33,38 +33,12 @@ public class RepsViewController extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       // HttpSession session = request.getSession();
-       // session.setAttribute("strApiKey", API_KEY);
+
         request.setAttribute("apiKey", API_KEY);
-        loadAddress(request,response);
         request.getRequestDispatcher("/WEB-INF/repsView.jsp").forward(request, response);
-        
-        /*
-        PrintWriter out = response.getWriter();
-        try {
-           
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RepsViewController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RepsViewController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
-        */
+
     }
-    
-    protected void loadAddress(HttpServletRequest request, HttpServletResponse response)
-          throws ServletException, IOException {
-        String street = request.getParameter("inputAddress");
-        String city = request.getParameter("dropdownCity");
-        address = street + ", " + city + " FL";
-        request.setAttribute("inputAddress", address);
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP
@@ -78,6 +52,9 @@ public class RepsViewController extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
+        
+        String location = request.getParameter("inputLocation");
+        request.setAttribute("inputAddress", location);
         processRequest(request, response);
     }
 
@@ -93,11 +70,12 @@ public class RepsViewController extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-        processRequest(request, response);
+       
         String street = request.getParameter("inputAddress");
         String city = request.getParameter("dropdownCity");
-        String addr = street + ", " + city + " FL";
-        request.setAttribute("inputAddress", addr);
+        address = street + ", " + city + " FL";
+        request.setAttribute("inputAddress", address);
+     processRequest(request, response);
         
     }
 

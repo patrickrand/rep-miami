@@ -15,7 +15,7 @@ Author     : Patrick
         <link href="./libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|News+Cycle|Open+Sans:400,300' rel='stylesheet' type='text/css'>
         <!-- Custom styles for this template -->
-        <link href ="./stylesheets/home.css" rel="stylesheet">
+        <link href ="./stylesheets/reps_stylesheet.css" rel="stylesheet">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     </head>
     <body>
@@ -113,13 +113,17 @@ Author     : Patrick
                     </div>
                 </div>
                 <hr>
-                <footer>
-                    <div class="row">
-                        <div class="col-lg-12 v-center">
-                            <p> &copy; Code For Miami 2013</p>
-                        </div>
+                  <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-md-offset-4"> 
+                        <br>
+                        <p class="text-center text-muted"> &copy; Code For Miami</p>
                     </div>
-                </footer>
+                </div>
+            </div> <!-- /container -->
+        </section>
+
             </div> <!-- /container -->
             <!-- JavaScript -->
             <script src="./libs/bootstrap/js/jquery-1.10.2.js"></script>
