@@ -53,7 +53,7 @@ public class RepsViewController extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
         
-        String location = request.getParameter("inputLocation");
+        String location = request.getParameter("inputLoc");
         request.setAttribute("inputAddress", location);
         processRequest(request, response);
     }
@@ -75,8 +75,8 @@ public class RepsViewController extends HttpServlet
         String city = request.getParameter("dropdownCity");
         address = street + ", " + city + " FL";
         request.setAttribute("inputAddress", address);
-     processRequest(request, response);
-        
+        processRequest(request, response);
+  
     }
 
     /**

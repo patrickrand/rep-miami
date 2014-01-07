@@ -53,14 +53,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav pull-right">
-                        <li class="divider-vertical" ></li>
-                        <li>
-                            <a href="http://es.codeformiami.org">
-                                Español
-                            </a>
-                        </li>
-                    </ul>
+                   
                 </form>
             </nav>    
         </header>
@@ -102,7 +95,7 @@
                         <br><br><p class ="lead"> or </p>
                      </form>
                    
-                            <div id="locationInput" name="locationInput" style="width:210px;text-align: center; margin:0 auto;">
+                            <div id="currLoc" name="currLoc" style="width:210px;text-align: center; margin:0 auto;">
                             <button name="locateButton" class="btn btn-primary1 drop"  onClick="geolocateUser();">Use current location <span class="glyphicon glyphicon-map-marker"></span></button>
                      
                             </div>

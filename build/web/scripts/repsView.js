@@ -60,7 +60,7 @@
      * Format and render results in the DOM.
      */
     function renderResults(response, rawResponse) {
-        var locationId = document.getElementById('location');
+        var locationId = document.getElementById('locationDiv');
         if (!response || response.error || 
                 response.status !== 'success') {
             locationId.innerHTML = '<div class="alert alert-danger">\n\
@@ -75,7 +75,7 @@
                 response.normalizedInput.state + ' ' +
                 response.normalizedInput.zip;
         
-        document.getElementById('location').innerHTML = '<strong>' +
+        locationId.innerHTML = '<strong>' +
                 formatLine(normalizedAddress) + '</strong>';
 
         $.each(response.divisions, function(key, value) {

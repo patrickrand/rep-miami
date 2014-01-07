@@ -45,14 +45,7 @@ Author     : Patrick
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav pull-right">
-                        <li class="divider-vertical"></li>
-                        <li>
-                            <a href="http://es.codeformiami.org">
-                                Español
-                            </a>
-                        </li>
-                    </ul>
+                    
                 </form>
             </nav>
             <div class="container">
@@ -62,7 +55,7 @@ Author     : Patrick
                 <div class="row">
                     <div class="col-lg-12">
                         <div class ="page-header1">Location<div class ="header-small">
-                                <div id ="location"></div>
+                                <div id ="locationDiv"></div>
                                 <div id ="sectionDiv"></div>
                             </div>
                         </div>
@@ -126,7 +119,7 @@ Author     : Patrick
 
             </div> <!-- /container -->
             <!-- JavaScript -->
-            <script src="./libs/bootstrap/js/jquery-1.10.2.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
             <script src="./libs/bootstrap/js/bootstrap.js"></script>
     </body>
 </html>
