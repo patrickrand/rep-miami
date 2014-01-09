@@ -85,12 +85,12 @@
                                 <option>Miami Beach</option><option>Miami Gardens</option><option>Miami Shores Village</option>
                                 <option>Miami Springs</option><option>North Bay Village</option><option>North Miami</option>
                                 <option>North Miami Beach</option><option>Opa-Locka</option><option>Pinecrest </option>
-                                <option>South Miami</option><option>Sunny Isles Beach</option><option>Surfside</option>{'includeOffices': 'true'}
+                                <option>South Miami</option><option>Sunny Isles Beach</option><option>Surfside</option>
                                 <option>Sweetwater</option><option>Virginia Gardens</option>
                             </select>
                         </div> 
                      
-                        <button name="searchButton" id="searchButton" class="btn btn-primary1 btn-lg"><span class="glyphicon glyphicon-search"></span></button>
+                        <button name="searchButton" id="searchButton" class="btn btn-primary1 drop"><span class="glyphicon glyphicon-search"></span></button>
                      
                         <br><br><p class ="lead"> or </p>
                      </form>
