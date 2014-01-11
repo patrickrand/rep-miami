@@ -20,13 +20,14 @@
                 <link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
 
         <!-- Bootstrap core CSS -->
+        
         <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href ="stylesheets/reps_stylesheet.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|News+Cycle|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-        <script src ="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-        <script src="scripts/userLocation.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <header>
@@ -70,8 +71,8 @@
         <div class="container-full">
             <div class="row">
                 <div class="col-lg-12 text-center v-center"><br><br>
-                    <img class="profile-img" src="images/repMiamiLogo.png" />
-                    <p class="lead" style="margin-bottom: 2.5%">
+                    <img alt="repMiami" class="profile-img" src="images/repMiamiLogo.png">
+                    <p class="lead" style="margin-bottom: 5%">
                         The source for all your Miami-Dade voter needs.</p><br>
                 </div>
             </div>
@@ -79,7 +80,6 @@
                 <div class="col-lg-12 text-center">
                     <form class="col-lg-12 text-center form-inline">
                         <div class="form-group" style="width:290px;text-align:center;margin:0 auto;">
-                            <label class="sr-only" for="inputStreet">Street Address</label>
                             <input type="text" class="form-control drop" id="inputAddress" name ="inputAddress" value="" placeholder="Enter street address">
                         </div>
                         <div class="form-group" style="width:240px;text-align: center; margin:0 auto;">
@@ -97,11 +97,12 @@
                                 <option>Sweetwater</option><option>Virginia Gardens</option>
                             </select>
                         </div>
-                        <button type='button' name="searchButton" id="searchButton" class="btn btn-primary1 drop" onClick="getUserAddress();"><span class="glyphicon glyphicon-search"></span></button>
-                        <br><br><p class ="lead">or</p>
-                        <button type='button' name="locateButton" class="btn btn-primary1 drop"  onClick="geolocateUser();">Use current location <span class="glyphicon glyphicon-map-marker"></span></button>
-                        <div id="locationInput">
-                        </div>
+                        
+                        
+                        <button type='button' name="searchButton" id="searchButton" class="btn btn-primary1 drop" onClick="getUserAddress()"><span class="glyphicon glyphicon-search"></span></button>
+                        <br><br>
+                        <p class ="lead">or</p>                     
+                        <button type='button' name="locateButton" class="btn btn-primary1 drop"  onClick="geolocateUser()">Use current location <span class="glyphicon glyphicon-map-marker"></span></button>
                     </form>
                 </div>
             </div>
@@ -117,14 +118,12 @@
                 </div>
             </div> <!-- /container -->
         </section>
-
+        <div id="locationInput"></div>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-
-
+      <script src ="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+      <script src="scripts/userLocation.js"></script>
     </body>
 </html>
