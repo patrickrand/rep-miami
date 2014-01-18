@@ -2,8 +2,18 @@
 .cover {
     visibility: hidden;
 }
-html,body {
-    height:100%;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: arial,sans-serif;
+    min-width: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .c4mblue { color: #399fd3; }
@@ -20,8 +30,15 @@ h3 {
     font-family: 'Open Sans',sans-serif;
     color: #555555;
     font-size:28px;
-    margin-bottom: 2%;
+    margin:1% auto;
+   
 }
+
+.row {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
 
 .info {
     font-family: 'Open Sans',sans-serif;
@@ -64,25 +81,22 @@ h3 {
 
 }
 
-
+.container {
+    max-width:100%;
+    padding:0;
+    text-align: center;
+}
 .container-full {
     margin: 0 auto;
     width: 100%;
-    min-height:100%;
+    height:100%;
+    min-width:900px;
+    min-height:600px;
     background-color:#fff;
     color:#eee;
     overflow:hidden;
+    text-align: center;
 }
-
-.container-full a {
-    color:#efefef;
-    text-decoration:none;
-}
-
-.v-center {
-    margin-top:5%;
-}
-
 
 
 /*
@@ -176,7 +190,7 @@ select:hover {
     background-position-y: center;
     border-color: #999999; }
 
-.drop {
+.form-font {
     font-family: 'Open Sans',sans-serif;
     font-size:21px;
     font-weight: 200;

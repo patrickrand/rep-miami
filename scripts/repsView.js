@@ -132,7 +132,7 @@ function renderResults(response, rawResponse) {
             if (value.hasOwnProperty('photoUrl'))
                 photo = 'src=' + '"' + value.photoUrl + '"';
             else
-                photo = false;
+                photo = 'src="images/'+name+'.png"';
 
             var repNode = writeRepNode(name, officeName, party,
                     phone, site, photo, address);
