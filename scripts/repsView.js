@@ -48,7 +48,7 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
 function renderResults(response, rawResponse) {
     var locationId = document.getElementById('locationBlock');
     if (!response || response.error || response.status !== 'success') {
-        locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for that address. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
+        locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.jsp" class = "alert-link"><br>Try again?</a></div>';
         return;
     }
 
@@ -132,7 +132,7 @@ function renderResults(response, rawResponse) {
             if (value.hasOwnProperty('photoUrl'))
                 photo = 'src=' + '"' + value.photoUrl + '"';
             else
-                photo = 'src="images/'+name+'.png"';
+                photo = false;
 
             var repNode = writeRepNode(name, officeName, party,
                     phone, site, photo, address);
