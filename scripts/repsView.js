@@ -1,8 +1,71 @@
 $.getScript("https://apis.google.com/js/client.js?onload=load", function() {});
-
+http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat=25.75&long=-80.36
 /**
  * Execute request to look up representative info for provided location.
  */
+
+//openState(25.75,-80.36);
+function openState(lat,long) {
+    $.ajax({ 
+        type: "GET",
+        dataType: "jsonp",
+        url: "http://openstates.org/api/v1/legislators/geo/?apikey=0029739b9483433f95c7036e042a4b4d&lat="+lat+"&long="+long,
+        success: function(data){
+            for (var k = 0; k < data.length; k++) {
+                var response = data[k];
+                var response_list = response.offices[0];
+                var name, party, phone, site, photo;
+                var address = '';
+                
+                if (response.hasOwnProperty('offices'))
+                    response_list = response.offices
+                if (response_list.hasOwnProperty('address')) {
+                    address = response_list.address + "<br> ";
+                    address = formatLine(address);
+                }
+
+                var office_name = "Florida State Legislature";
+                
+                if (response.hasOwnProperty('full_name'))
+                    name = response.name;
+                else
+                    name = "";
+
+                if (response.hasOwnProperty('party'))
+                    party = " - " + response.party;
+                else
+                    party = "";
+            
+                if (response_list.hasOwnProperty('phone'))
+                    phone = response_list.phone;
+                else
+                    phone = "";
+
+                if (response_list.hasOwnProperty('url'))
+                    site = truncate(response_list.url);
+                else
+                    site = "";
+
+                if (response.hasOwnProperty('photo_url'))
+                    photo = 'src=' + '"' + response.photo_url + '"';
+                else
+                    photo = false;
+
+                var repNode = writeRepNode(name, office_name, party, phone, site, photo, address);
+
+                $("#state").append(repNode);
+                   
+            }
+       // offices.push({"name" : "Florida Legislature", "level":"city"});
+    //members[key] = { "name" : response.full_name, "address":[{"locationName": "response_list.address" }],
+          //  "party" : response.party, "phones": [response_list.phone], "urls" : response_list.url, "photoUrl": response.photo_url };
+       // alert(value.full_name);
+   }
+    
+   
+});
+
+}
 function lookup(address, callback) {
     //Request object
     var req = gapi.client.request({
@@ -69,6 +132,9 @@ function renderResults(response, rawResponse) {
     }
 
     var officeArr = [];
+    //var officialsObj = response.officials;
+    //openState(25.75,-80.36, officialsObj, officeArr);
+    
     var officeObj = response.offices;
     for (var key in officeObj) {
         var value = officeObj[key];
@@ -82,12 +148,15 @@ function renderResults(response, rawResponse) {
 
     var k = 0;
     var officialsObj = response.officials;
+    
+  //  openState(25.75,-80.36, officialsObj, officeArr);
+    
     for (var key in officialsObj) {
         var value = officialsObj[key];
 
         if (value.name !== "Barack Hussein Obama II"
                 && value.name !== "Joseph (Joe) Robinette Biden Jr.") {
-            var name, party, phone, site, photo, node;
+            var name, party, phone, site, photo;
             var address = '';
 
             if (value.hasOwnProperty('address')) {
@@ -158,6 +227,8 @@ function renderResults(response, rawResponse) {
             }
         }
     }
+    
+    openState(25.75,-80.36);
 }
 
 function parseUrl(str) {
