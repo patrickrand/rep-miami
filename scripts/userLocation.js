@@ -21,8 +21,9 @@ function writeAddressName(latLng) {
                 var len = component.length;
                 var addr = 'error';
                 for ( var i = 0; i < len; ++i ) {
-                    if (component[i].long_name === 'Miami-Dade') {
+                    if (component[i].long_name.indexOf('Miami-Dade') !== -1) {
                         addr = field.formatted_address;
+                        alert(component[i].long_name);
                         break;
                     }
                 }
@@ -40,6 +41,7 @@ function geolocateUser() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+           // alert(pos);
             writeAddressName(pos);
         });
     } 
